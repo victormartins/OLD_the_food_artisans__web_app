@@ -61,20 +61,18 @@ class RecipeBox extends React.Component {
     return (
       <Card elevation={2}>
         <CardHeader
-          title="Spanish Paella"
-          subheader="Plant Based Food"
+          title={this.props.name}
+          subheader={this.props.short_description}
         />
 
         <CardMedia
           className={classes.media}
-          image="https://material-ui.com//static/images/cards/paella.jpg"
-          title="Contemplative Reptile"
+          image={this.props.cover}
+          title={this.props.name}
         />
 
         <CardContent>
-          <Typography component="p">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem a id dolorum. Sed, veritatis, perferendis, dolores voluptate pariatur placeat dicta nemo labore fugit natus nam maiores illo, corporis minima molestias.
-              </Typography>
+          <Typography component="p"> {this.props.description} </Typography>
         </CardContent>
         <CardActions>
           <IconButton aria-label="Add to favorites" color="secondary">
@@ -115,9 +113,7 @@ class RecipeBox extends React.Component {
                 <Typography variant="body2" color="primary">
                   How does it taste?
                     </Typography>
-                <Typography variant="body">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima veritatis, quo non, rerum voluptas nobis labore facilis saepe, sunt perferendis mollitia? Maxime tempore quasi magni libero ad hic, nesciunt explicabo!
-                    </Typography>
+                <Typography>{this.props.more_details} </Typography>
               </Grid>
 
               <Grid item xs={12} sm={6}>
@@ -125,12 +121,11 @@ class RecipeBox extends React.Component {
                   Ingredients:
                     </Typography>
                 <Typography variant="caption">
-                  (Alergens in Bold)
+                  (Alergens: Please Call Us!)
                     </Typography>
-                <Typography paragraph>
-                  • Aubergine
-                  • Peppers
-                    </Typography>
+                <Typography variant="p">
+                    • Aubergine
+                </Typography>
               </Grid>
             </Grid>
           </CardContent>
