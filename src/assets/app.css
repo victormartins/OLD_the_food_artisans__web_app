@@ -1,0 +1,22 @@
+/* .root {
+  display: grid;
+
+  grid-template-areas:
+  "margin-column  main-content  margin-column"
+  "footer         footer        footer"
+} */
+
+.main_content {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.main_footer__content {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+.main_footer__content ul{
+  list-style: none;
+}
