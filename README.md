@@ -1,21 +1,11 @@
-# Create React App example
+# The Food Artisans Web App
 
-## How to use
+## Scripts
+To install the App
+`.install.sh`
 
-Download the example [or clone the repo](https://github.com/mui-org/material-ui):
+To install the App to the latest version
+`.update.sh  `
 
-```bash
-curl https://codeload.github.com/mui-org/material-ui/tar.gz/master | tar -xz --strip=2 material-ui-master/examples/create-react-app
-cd create-react-app
-```
-
-Install it and run:
-
-```bash
-npm install
-npm run start
-```
-
-## The idea behind the example
-
-[Create React App](https://github.com/facebookincubator/create-react-app) with no build configuration.
+To Start the app
+`.start.sh  `
