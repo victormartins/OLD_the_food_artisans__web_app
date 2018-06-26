@@ -16,6 +16,7 @@ class MenuForTheDay extends React.Component {
                     cover={recipe.cover}
                     more_details={recipe.more_details}
                     description={recipe.description}
+                    ingredients={recipe.ingredients}
                 />
             </Grid>
         })

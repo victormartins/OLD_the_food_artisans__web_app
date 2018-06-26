@@ -57,6 +57,9 @@ class RecipeBox extends React.Component {
 
   render() {
     const { classes } = this.props;
+    const Ingredients = this.props.ingredients.map((ingredient) => {
+      return <Typography variant="p">• {ingredient.name}</Typography>
+    })
 
     return (
       <Card elevation={2}>
@@ -92,7 +95,6 @@ class RecipeBox extends React.Component {
             inputProps={{
               step: 1,
             }}
-            required={true}
           />
           <IconButton
             className={classnames(classes.expand, {
@@ -120,12 +122,8 @@ class RecipeBox extends React.Component {
                 <Typography variant="body2" color="primary">
                   Ingredients:
                     </Typography>
-                <Typography variant="caption">
-                  (Alergens: Please Call Us!)
-                    </Typography>
-                <Typography variant="p">
-                    • Aubergine
-                </Typography>
+                <Typography variant="caption"> (Alergens: Please Call Us!) </Typography>
+                {Ingredients}
               </Grid>
             </Grid>
           </CardContent>
