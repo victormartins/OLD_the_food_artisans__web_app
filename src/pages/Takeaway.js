@@ -9,7 +9,7 @@ class Takeaway extends React.Component {
     value: 1,
   }
 
-  handleChange = (value) => {
+  handleChange = (event, value) => {
     this.setState({ value });
   };
   render() {

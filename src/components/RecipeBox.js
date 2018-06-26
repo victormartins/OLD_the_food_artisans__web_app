@@ -58,7 +58,7 @@ class RecipeBox extends React.Component {
   render() {
     const { classes } = this.props;
     const Ingredients = this.props.ingredients.map((ingredient) => {
-      return <Typography key={ingredient.name} variant="p">• {ingredient.name}</Typography>
+      return <Typography key={ingredient.name} component="p">• {ingredient.name}</Typography>
     })
 
     return (
@@ -113,7 +113,7 @@ class RecipeBox extends React.Component {
             <Grid container spacing={24}>
               <Grid item xs={12} sm={6}>
                 <Typography variant="body2" color="primary">
-                  How does it taste?
+                  Tell me more:
                     </Typography>
                 <Typography>{this.props.more_details} </Typography>
               </Grid>
