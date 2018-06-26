@@ -28,21 +28,27 @@ class ShoppingCartButton extends React.Component {
             exit: 150,
         }
 
+        const shoppingCartButton = () => {
+          return(
+            <Zoom
+                in={this.state.value === 1}
+                timeout={transitionDuration}
+                style={{
+                    transitionDelay: this.state.value === 1 ? transitionDuration.exit : 0,
+                }}
+                unmountOnExit
+            >
+                <Button variant="fab" className={classes.fab} color="secondary">
+                    <ShoppingCart />
+                </Button>
+            </Zoom>
+          )
+        }
+
         return (
-            <div className="shopping_cart_btn">
-                <Zoom
-                    in={this.state.value === 1}
-                    timeout={transitionDuration}
-                    style={{
-                        transitionDelay: this.state.value === 1 ? transitionDuration.exit : 0,
-                    }}
-                    unmountOnExit
-                >
-                    <Button variant="fab" className={classes.fab} color="secondary">
-                        <ShoppingCart />
-                    </Button>
-                </Zoom>
-            </div>
+          <div className="shopping_cart_btn">
+              {shoppingCartButton()}
+          </div>
         )
     }
 }

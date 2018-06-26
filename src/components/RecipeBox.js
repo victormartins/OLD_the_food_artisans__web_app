@@ -67,7 +67,7 @@ class RecipeBox extends React.Component {
     const Ingredients = this.props.ingredients.map((ingredient) => {
       return <Typography key={ingredient.name} component="p">• {ingredient.name}</Typography>
     })
-    const quantityButton = (props) => {
+    const quantityButton = () => {
       if (this.state.quantity > 0) {
         return(
           <TextField
