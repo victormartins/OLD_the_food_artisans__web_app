@@ -7,26 +7,26 @@ import FormControl from '@material-ui/core/FormControl'
 const styles = () => ({})
 
 class TakeawayForm extends React.Component {
-    constructor() {
-        super()
-        this.state={
-            daily_menus: TakeawayStore.getAll()
-        }
+  constructor() {
+    super()
+    this.state = {
+      daily_menus: TakeawayStore.getAll()
     }
+  }
 
-    render() {
-        const DailyMenus = this.state.daily_menus.map((menu) => {
-            return <MenuForTheDay key={menu.day} day={menu.day} recipes={menu.recipes}/>
-        })
+  render() {
+    const DailyMenus = this.state.daily_menus.map((menu) => {
+      return <MenuForTheDay key={menu.day} day={menu.day} recipes={menu.recipes} />
+    })
 
-        return (
-            <section className="takeaway_form">
-                <FormControl>
-                    {DailyMenus}
-                </FormControl>
-            </section>
-        )
-    }
+    return (
+      <section className="takeaway_form">
+        <FormControl>
+          {DailyMenus}
+        </FormControl>
+      </section>
+    )
+  }
 }
 
 export default withStyles(styles)(TakeawayForm)

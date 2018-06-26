@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import ShoppingCart from '@material-ui/icons/ShoppingCart'
 import Zoom from '@material-ui/core/Zoom'
+import OrdersStore from '../stores/OrdersStore'
 
 const styles = theme => ({
     fab: {
@@ -18,7 +19,7 @@ const styles = theme => ({
 
 class ShoppingCartButton extends React.Component {
     state = {
-       value: 1,
+       show: OrdersStore.any(),
     }
     render() {
         const { classes, theme } = this.props
@@ -31,10 +32,10 @@ class ShoppingCartButton extends React.Component {
         const shoppingCartButton = () => {
           return(
             <Zoom
-                in={this.state.value === 1}
+                in={this.state.show}
                 timeout={transitionDuration}
                 style={{
-                    transitionDelay: this.state.value === 1 ? transitionDuration.exit : 0,
+                    transitionDelay: this.state.show ? transitionDuration.exit : 0,
                 }}
                 unmountOnExit
             >
