@@ -58,7 +58,7 @@ class RecipeBox extends React.Component {
   render() {
     const { classes } = this.props;
     const Ingredients = this.props.ingredients.map((ingredient) => {
-      return <Typography variant="p">• {ingredient.name}</Typography>
+      return <Typography key={ingredient.name} variant="p">• {ingredient.name}</Typography>
     })
 
     return (

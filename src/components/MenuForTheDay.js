@@ -9,7 +9,7 @@ const styles = () => ({})
 class MenuForTheDay extends React.Component {
     render() {
         const Recipes = this.props.recipes.map((recipe) => {
-            return <Grid item sm={12} md={4}>
+            return <Grid item sm={12} md={4} key={recipe.name}>
                 <RecipeBox
                     name={recipe.name}
                     short_description={recipe.short_description}
@@ -18,11 +18,14 @@ class MenuForTheDay extends React.Component {
                     description={recipe.description}
                     ingredients={recipe.ingredients}
                 />
+                <br/>
+                <br/>
             </Grid>
         })
 
         return (
             <React.Fragment>
+                <br/>
                 <Typography gutterBottom variant="display1" color="primary">{this.props.day}</Typography>
                 <Grid container spacing={24}>
                     {Recipes}

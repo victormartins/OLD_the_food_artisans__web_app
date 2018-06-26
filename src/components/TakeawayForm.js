@@ -16,7 +16,7 @@ class TakeawayForm extends React.Component {
 
     render() {
         const DailyMenus = this.state.daily_menus.map((menu) => {
-            return  <MenuForTheDay day={menu.day} recipes={menu.recipes}/>
+            return <MenuForTheDay key={menu.day} day={menu.day} recipes={menu.recipes}/>
         })
 
         return (
