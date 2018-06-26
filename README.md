@@ -4,7 +4,7 @@
 To install the App
 `.install.sh`
 
-To install the App to the latest version
+To update the App to the latest version
 `.update.sh  `
 
 To Start the app
