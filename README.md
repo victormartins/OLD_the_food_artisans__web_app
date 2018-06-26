@@ -1,11 +1,12 @@
 # The Food Artisans Web App
 
 ## Scripts
-To install the App
-`.install.sh`
+To **Install** the App run
+`$ ./scripts/install.sh`
 
-To update the App to the latest version
-`.update.sh  `
+To **Update** the App to the latest version
+`$ ./scripts/.update.sh  `
 
-To Start the app
-`.start.sh  `
+To **Start** the app run
+`$ ./scripts/.start.sh  `
+then go to `http:localhost:3000`
