@@ -9,4 +9,4 @@ To **Update** the App to the latest version
 
 To **Start** the app run
 `$ ./scripts/.start.sh  `
-then go to `http:localhost:3000`
+then go to `http://localhost:3000`
