@@ -42,16 +42,24 @@ const styles = theme => ({
 
 class RecipeBox extends React.Component {
   state = {
-    expanded: false
+    expanded: false,
+    quantity: 0
   }
 
   handleExpandClick = () => {
     this.setState({ expanded: !this.state.expanded })
   }
 
-  handleChange = quantity => event => {
+  handleChange = setting_name => event => {
     this.setState({
-      [quantity]: event.target.value,
+      [setting_name]: Number(event.target.value),
+    });
+  };
+
+  addOne = (event) => {
+    console.log('add One')
+    this.setState({
+      quantity: this.state.quantity + 1
     });
   };
 
@@ -60,6 +68,24 @@ class RecipeBox extends React.Component {
     const Ingredients = this.props.ingredients.map((ingredient) => {
       return <Typography key={ingredient.name} component="p">• {ingredient.name}</Typography>
     })
+    const quantityButton = (props) => {
+      if (this.state.quantity > 0) {
+        return(
+          <TextField
+            id="quantity"
+            label="Quantity"
+            type="number"
+            className={classes.textField}
+            onChange={this.handleChange('quantity')}
+            inputProps={{
+              step: 1,
+            }}
+            value={this.state.quantity}
+          />
+        )
+      }
+    }
+
 
     return (
       <Card elevation={2}>
@@ -78,24 +104,14 @@ class RecipeBox extends React.Component {
           <Typography component="p"> {this.props.description} </Typography>
         </CardContent>
         <CardActions>
-          <IconButton aria-label="Add to favorites" color="secondary">
+          <IconButton
+            aria-label="Add to favorites"
+            color="secondary"
+            onClick={this.addOne}
+          >
             <ShoppingCart />
           </IconButton>
-          <TextField
-            id="quantity"
-            label="Quantity"
-            type="number"
-            defaultValue={0}
-            className={classes.textField}
-            onChange={this.handleChange('quantity')}
-            readOnly
-            // InputLabelProps={{
-            //   shrink: true,
-            // }}
-            inputProps={{
-              step: 1,
-            }}
-          />
+          {quantityButton()}
           <IconButton
             className={classnames(classes.expand, {
               [classes.expandOpen]: this.state.expanded,
