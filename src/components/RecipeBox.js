@@ -50,14 +50,13 @@ class RecipeBox extends React.Component {
     this.setState({ expanded: !this.state.expanded })
   }
 
-  handleChange = setting_name => event => {
+  handleChange = event => {
     this.setState({
-      [setting_name]: Number(event.target.value),
+      quantity: Number(event.target.value),
     });
   };
 
   addOne = (event) => {
-    console.log('add One')
     this.setState({
       quantity: this.state.quantity + 1
     });
@@ -76,7 +75,7 @@ class RecipeBox extends React.Component {
             label="Quantity"
             type="number"
             className={classes.textField}
-            onChange={this.handleChange('quantity')}
+            onChange={this.handleChange}
             inputProps={{
               step: 1,
             }}
