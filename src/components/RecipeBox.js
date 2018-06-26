@@ -12,7 +12,7 @@ import IconButton from '@material-ui/core/IconButton'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse'
 import TextField from '@material-ui/core/TextField';
-import ShoppingCart from '@material-ui/icons/ShoppingCart'
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 const styles = theme => ({
   media: {
@@ -108,7 +108,7 @@ class RecipeBox extends React.Component {
             color="secondary"
             onClick={this.addOne}
           >
-            <ShoppingCart />
+            <AddShoppingCartIcon />
           </IconButton>
           {quantityButton()}
           <IconButton

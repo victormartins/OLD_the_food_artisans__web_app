@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import Router from './../Router'
 import MainFooter from './../components/MainFooter'
+import ShoppingCartButton from '../components/ShoppingCartButton'
 import withRoot from '../withRoot'
 
 const styles = () => ({
@@ -36,6 +37,7 @@ class Index extends React.Component {
       <BrowserRouter>
         <div className={classes.root}>
           <CssBaseline />
+          <ShoppingCartButton />
           {/* <TopMenuBar /> # TODO: Make this show up only in scroll? */}
           <div className="main_content">
             <Router state={this.state}/>
