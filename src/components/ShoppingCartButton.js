@@ -18,7 +18,7 @@ const styles = theme => ({
 
 class ShoppingCartButton extends React.Component {
     state = {
-        value: 1,
+       value: 1,
     }
     render() {
         const { classes, theme } = this.props
@@ -29,10 +29,9 @@ class ShoppingCartButton extends React.Component {
         }
 
         return (
-
             <div className="shopping_cart_btn">
                 <Zoom
-                    in={this.state.value === 1 }
+                    in={this.state.value === 1}
                     timeout={transitionDuration}
                     style={{
                         transitionDelay: this.state.value === 1 ? transitionDuration.exit : 0,
