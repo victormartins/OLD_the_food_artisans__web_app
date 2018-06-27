@@ -16,21 +16,6 @@ const styles = () => ({
 })
 
 class Index extends React.Component {
-  state = {
-    value: {
-      order: {},
-      takeaway: {
-        "18 Jan": {
-          menu: [
-            { name: "Paellita do Risitas", short_description: "A Summer Hit" },
-            { name: "Paellita do Risitas", short_description: "A Summer Hit" },
-            { name: "Paellita do Risitas", short_description: "A Summer Hit" }
-          ]
-        }
-      },
-    }
-  }
-
   render() {
     const { classes } = this.props
     return (

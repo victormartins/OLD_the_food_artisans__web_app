@@ -5,7 +5,8 @@ import { withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import ShoppingCart from '@material-ui/icons/ShoppingCart'
 import Zoom from '@material-ui/core/Zoom'
-import OrdersStore from '../stores/OrdersStore'
+import OrdersActions from '../data/OrdersActions'
+import Dispatcher from '../Dispatcher'
 
 const styles = theme => ({
     fab: {
@@ -19,8 +20,18 @@ const styles = theme => ({
 
 class ShoppingCartButton extends React.Component {
     state = {
-       show: OrdersStore.any(),
+       show: OrdersActions.any(),
     }
+
+    // This will keep the state up to date whenever the store changes
+    // componentWillMount(){
+    //   OrdersStore.on("change", () => {
+    //     this.setState({
+    //       show: OrdersStore.any()
+    //     })
+    //   })
+    // }
+
     render() {
         const { classes, theme } = this.props
 

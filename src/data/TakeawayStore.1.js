@@ -1,7 +1,6 @@
-// import {ReduceStore} from 'flux/utils'
-import { EventEmitter } from 'events'
+import {ReduceStore} from 'flux/utils'
 
-class TakeawayStore extends EventEmitter {
+class TakeawayStore extends ReduceStore {
     constructor() {
         super()
         this.daily_menus = [

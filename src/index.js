@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Index from './pages/index';
+import AppContainer from './containers/AppContainer';
 
-ReactDOM.render(<Index />, document.querySelector('#root'));
+ReactDOM.render(<AppContainer />, document.querySelector('#root'));
