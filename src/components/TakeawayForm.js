@@ -7,7 +7,7 @@ import FormControl from '@material-ui/core/FormControl'
 const styles = () => ({})
 
 function TakeawayForm(props) {
-  console.log("Menus", props.takeaway)
+
   const DailyMenus = TakeawayActions.getDailyMenus().map((menu) => {
     return <MenuForTheDay key={menu.day} day={menu.day} recipes={menu.recipes} />
   })
