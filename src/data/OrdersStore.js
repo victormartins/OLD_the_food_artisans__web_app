@@ -10,7 +10,7 @@ class OrdersStore extends ReduceStore {
   }
 
   getInitialState() {
-    return Immutable.OrderedMap();
+    return Immutable.OrderedMap()
   }
 
   reduce(state, action) {

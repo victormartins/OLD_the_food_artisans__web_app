@@ -1,7 +1,6 @@
 import './../assets/app.css'
 
 import React from 'react'
-import PropTypes from 'prop-types'
 import { BrowserRouter } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
 import CssBaseline from '@material-ui/core/CssBaseline'
@@ -15,7 +14,7 @@ const styles = () => ({
   main_content: {}
 })
 
-class Index extends React.Component {
+class AppView extends React.Component {
   render() {
     const { classes } = this.props
     return (
@@ -36,8 +35,4 @@ class Index extends React.Component {
   }
 }
 
-Index.propTypes = {
-  classes: PropTypes.object.isRequired,
-}
-
-export default withRoot(withStyles(styles)(Index))
+export default withRoot(withStyles(styles)(AppView))
