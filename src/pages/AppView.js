@@ -15,6 +15,16 @@ const styles = () => ({
 })
 
 class AppView extends React.Component {
+  state = {
+    posts: null
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+    .then(response => response.json())
+    .then(posts => { this.setState({posts})})
+  }
+
   render() {
     const { classes } = this.props
     return (
