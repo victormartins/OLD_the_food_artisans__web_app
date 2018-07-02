@@ -15,26 +15,16 @@ const styles = () => ({
 })
 
 class AppView extends React.Component {
-  state = {
-    posts: null
-  }
-
-  componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/posts/1')
-    .then(response => response.json())
-    .then(posts => { this.setState({posts})})
-  }
-
   render() {
     const { classes } = this.props
+
     return (
       <BrowserRouter>
         <div className={classes.root}>
           <CssBaseline />
           <ShoppingCartButton />
-          {/* <TopMenuBar /> # TODO: Make this show up only in scroll? */}
           <div className="main_content">
-            <Router state={this.state}/>
+            <Router/>
           </div>
           <div className="main_footer">
             <MainFooter />

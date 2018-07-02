@@ -8,9 +8,17 @@ class TakeawayStore extends ReduceStore {
     super(Dispatcher);
   }
 
+  // componentDidMount() {
+  //   fetch('https://jsonplaceholder.typicode.com/posts/1')
+  //   .then(response => response.json())
+  //   .then(posts => { this.setState({posts})})
+  //   .then(posts => console.log("POSTS", posts))
+  // }
+
   getInitialState() {
-    return Immutable.OrderedMap().set(
-      "daily_menus", [
+    // Immutable.OrderedMap()
+    return {
+      "daily_menus": [
         {
           day: '18 Jan',
           recipes: [
@@ -120,15 +128,11 @@ class TakeawayStore extends ReduceStore {
           ]
         }
       ]
-    );
+    }
   }
 
   reduce(state, action) {
-    console.log("Action Type ", action.type)
     switch (action.type) {
-      case TakeawayActionTypes.GET_DAILY_MENUS:
-        return state;
-
       default:
         return state;
     }
