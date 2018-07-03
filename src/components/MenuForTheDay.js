@@ -11,12 +11,14 @@ class MenuForTheDay extends React.Component {
         const Recipes = this.props.recipes.map((recipe) => {
             return <Grid item sm={12} md={4} key={recipe.name}>
                 <RecipeBox
+                    id={recipe.id}
                     name={recipe.name}
                     short_description={recipe.short_description}
                     cover={recipe.cover}
                     more_details={recipe.more_details}
                     description={recipe.description}
                     ingredients={recipe.ingredients}
+                    addOrder={this.props.addOrder}
                 />
                 <br/>
                 <br/>

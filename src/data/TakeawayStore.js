@@ -23,7 +23,7 @@ class TakeawayStore extends ReduceStore {
           day: '18 Jan',
           recipes: [
             {
-              key: 'a',
+              id: 'a',
               name: 'Paellita do Risitas',
               short_description: 'A Summer Hit',
               cover: 'https://material-ui.com//static/images/cards/paella.jpg',
@@ -36,7 +36,7 @@ class TakeawayStore extends ReduceStore {
               ]
             },
             {
-              key: 'b',
+              id: 'b',
               name: 'Feijocas Brazileira',
               short_description: 'Feijao preto maravilha',
               cover: 'https://i1.wp.com/www.onegreenplanet.org/wp-content/uploads/2016/04/colombian-black-bean-stew.jpg',
@@ -45,7 +45,7 @@ class TakeawayStore extends ReduceStore {
               ingredients: []
             },
             {
-              key: 'c',
+              id: 'c',
               name: 'Calhos',
               short_description: 'Spanish Style',
               cover: 'https://previews.123rf.com/images/nito500/nito5001704/nito500170400185/76893697-closeup-of-an-earthenware-bowl-with-spanish-callos-a-typical-stew-with-beef-tripe-and-chickpeas-on-a.jpg',
@@ -59,7 +59,7 @@ class TakeawayStore extends ReduceStore {
           day: '24 Jan',
           recipes: [
             {
-              key: 'a',
+              id: 'a',
               name: 'Paellita do Risitas',
               short_description: 'A Summer Hit',
               cover: 'https://material-ui.com//static/images/cards/paella.jpg',
@@ -72,7 +72,7 @@ class TakeawayStore extends ReduceStore {
               ]
             },
             {
-              key: 'b',
+              id: 'b',
               name: 'Feijocas Brazileira',
               short_description: 'Feijao preto maravilha',
               cover: 'https://i1.wp.com/www.onegreenplanet.org/wp-content/uploads/2016/04/colombian-black-bean-stew.jpg',
@@ -81,7 +81,7 @@ class TakeawayStore extends ReduceStore {
               ingredients: []
             },
             {
-              key: 'c',
+              id: 'c',
               name: 'Calhos',
               short_description: 'Spanish Style',
               cover: 'https://previews.123rf.com/images/nito500/nito5001704/nito500170400185/76893697-closeup-of-an-earthenware-bowl-with-spanish-callos-a-typical-stew-with-beef-tripe-and-chickpeas-on-a.jpg',
@@ -95,7 +95,7 @@ class TakeawayStore extends ReduceStore {
           day: '31 Jan',
           recipes: [
             {
-              key: 'a',
+              id: 'a',
               name: 'Paellita do Risitas',
               short_description: 'A Summer Hit',
               cover: 'https://material-ui.com//static/images/cards/paella.jpg',
@@ -108,7 +108,7 @@ class TakeawayStore extends ReduceStore {
               ]
             },
             {
-              key: 'b',
+              id: 'b',
               name: 'Feijocas Brazileira',
               short_description: 'Feijao preto maravilha',
               cover: 'https://i1.wp.com/www.onegreenplanet.org/wp-content/uploads/2016/04/colombian-black-bean-stew.jpg',
@@ -117,7 +117,7 @@ class TakeawayStore extends ReduceStore {
               ingredients: []
             },
             {
-              key: 'c',
+              id: 'c',
               name: 'Calhos',
               short_description: 'Spanish Style',
               cover: 'https://previews.123rf.com/images/nito500/nito5001704/nito500170400185/76893697-closeup-of-an-earthenware-bowl-with-spanish-callos-a-typical-stew-with-beef-tripe-and-chickpeas-on-a.jpg',

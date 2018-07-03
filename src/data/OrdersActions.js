@@ -16,3 +16,4 @@ const OrdersActions = {
 };
 
 export default OrdersActions;
+window.oa = OrdersActions // TODO VICMAR REMOVE

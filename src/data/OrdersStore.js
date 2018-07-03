@@ -16,6 +16,7 @@ class OrdersStore extends ReduceStore {
   reduce(state, action) {
     switch (action.type) {
       case OrdersActionTypes.ADD_ORDER:
+        console.log("ADD ORDER FUNCTION: ", action.order)
         const id = Date.now()
         return state.set(id, new Order({
           id,
