@@ -12,10 +12,12 @@ const styles = () => ({})
 class TakeawayForm extends React.Component {
   addOrder = order_info => {
     const full_order_info = {
-      recipe_id: order_info.id,
-      recipe_name: order_info.name,
-      service_type: ServiceTypes.TAKEAWAY
+      recipe_id:    order_info.id,
+      recipe_name:  order_info.name,
+      service_type: ServiceTypes.TAKEAWAY,
+      delivery_date: order_info.delivery_date
     }
+    // console.table(full_order_info)
     OrdersActions.addOrder(full_order_info)
   }
 

@@ -7,6 +7,11 @@ import Typography from '@material-ui/core/Typography'
 const styles = () => ({})
 
 class MenuForTheDay extends React.Component {
+    addOrder = (order) => {
+      order.delivery_date = this.props.day
+      this.props.addOrder(order)
+    }
+
     render() {
         const Recipes = this.props.recipes.map((recipe) => {
             return <Grid item sm={12} md={4} key={recipe.name}>
@@ -18,7 +23,7 @@ class MenuForTheDay extends React.Component {
                     more_details={recipe.more_details}
                     description={recipe.description}
                     ingredients={recipe.ingredients}
-                    addOrder={this.props.addOrder}
+                    addOrder={this.addOrder}
                 />
                 <br/>
                 <br/>

@@ -52,7 +52,7 @@ class RecipeBox extends React.Component {
 
   addOrder = () => {
     const recipe_info = {
-      id: this.props.id,
+      id:   this.props.id,
       name: this.props.name
     }
 
