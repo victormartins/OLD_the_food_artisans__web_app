@@ -13,6 +13,9 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse'
 import TextField from '@material-ui/core/TextField';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import ShoppingCartButton from './ShoppingCartButton';
+import PlusIcon from '@material-ui/icons/Alarm';
+import MinusIcon from '@material-ui/icons/AlarmOff';
 
 const styles = theme => ({
   media: {
@@ -50,13 +53,19 @@ class RecipeBox extends React.Component {
     this.setState({ expanded: !this.state.expanded })
   }
 
-  addOrder = () => {
-    const recipe_info = {
-      id:   this.props.id,
-      name: this.props.name
+  recipeInfo = (props) => {
+    return {
+      id: props.id,
+      name: props.name
     }
+  }
 
-    this.props.addOrder(recipe_info)
+  addOrder = () => {
+    this.props.addOrder(this.recipeInfo(this.props))
+  }
+
+  removeOrder = () => {
+    this.props.removeOrder(this.recipeInfo(this.props))
   }
 
   handleQuantityChange = event => {
@@ -75,25 +84,51 @@ class RecipeBox extends React.Component {
     });
   };
 
+
+  removeOne = (event) => {
+    this.removeOrder()
+
+    this.setState({
+      quantity: this.state.quantity - 1
+    });
+  };
+
   render() {
     const { classes } = this.props;
     const Ingredients = this.props.ingredients.map((ingredient) => {
       return <Typography key={ingredient.name} component="p">• {ingredient.name}</Typography>
     })
-    const quantityButton = () => {
-      if (this.state.quantity > 0) {
+    const incrementQuantityButton = () => {
+      if (this.state.quantity <= 0) {
         return(
-          <TextField
-            id="quantity"
-            label="Quantity"
-            type="number"
-            className={classes.textField}
-            onChange={this.handleQuantityChange}
-            inputProps={{
-              step: 1,
-            }}
-            value={this.state.quantity}
-          />
+          <IconButton
+            aria-label="Add to Cart"
+            color="secondary"
+            onClick={this.addOne}
+          >
+            <AddShoppingCartIcon />
+          </IconButton>
+        )
+      }
+    }
+    const quantityTextBox = () => {
+      if (this.state.quantity > 0) {
+        return (
+          <React.Fragment>
+            <IconButton
+              arial-label="Remove from Cart"
+              onClick={this.removeOne}
+            >
+              <MinusIcon />
+            </IconButton>
+            <Typography component="p"> {this.state.quantity} </Typography>
+            <IconButton
+              arial-label="Add to Cart"
+              onClick={this.addOne}
+            >
+              <PlusIcon />
+            </IconButton>
+          </React.Fragment>
         )
       }
     }
@@ -116,14 +151,11 @@ class RecipeBox extends React.Component {
           <Typography component="p"> {this.props.description} </Typography>
         </CardContent>
         <CardActions>
-          <IconButton
-            aria-label="Add to favorites"
-            color="secondary"
-            onClick={this.addOne}
-          >
-            <AddShoppingCartIcon />
-          </IconButton>
-          {quantityButton()}
+
+          {incrementQuantityButton()}
+          {quantityTextBox()}
+
+          {/* Expand Icon Bellow */}
           <IconButton
             className={classnames(classes.expand, {
               [classes.expandOpen]: this.state.expanded,

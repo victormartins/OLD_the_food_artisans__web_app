@@ -8,6 +8,12 @@ const OrdersActions = {
       type: OrdersActionTypes.ADD_ORDER,
       order
     });
+  },
+  removeOrder(order) {
+    Dispatcher.dispatch({
+      type: OrdersActionTypes.REMOVE_ORDER,
+      order
+    });
   }
 };
 

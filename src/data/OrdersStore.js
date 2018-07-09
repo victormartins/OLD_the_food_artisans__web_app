@@ -28,6 +28,9 @@ class OrdersStore extends ReduceStore {
 
         return state.set(order_id, order_info);
 
+      case OrdersActionTypes.REMOVE_ORDER:
+        console.log('REEMOVING THE ORDER')
+        return "OK"
       default:
         return state;
     }
