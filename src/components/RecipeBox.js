@@ -14,8 +14,8 @@ import Collapse from '@material-ui/core/Collapse'
 import TextField from '@material-ui/core/TextField';
 import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import ShoppingCartButton from './ShoppingCartButton';
-import PlusIcon from '@material-ui/icons/Alarm';
-import MinusIcon from '@material-ui/icons/AlarmOff';
+import PlusIcon from '@material-ui/icons/AddCircleOutline';
+import MinusIcon from '@material-ui/icons/RemoveCircleOutline';
 
 const styles = theme => ({
   media: {
@@ -124,6 +124,7 @@ class RecipeBox extends React.Component {
             <Typography component="p"> {this.state.quantity} </Typography>
             <IconButton
               arial-label="Add to Cart"
+              color="secondary"
               onClick={this.addOne}
             >
               <PlusIcon />
