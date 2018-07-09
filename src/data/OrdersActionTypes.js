@@ -1,6 +1,5 @@
 const OrdersActionTypes = {
-  ADD_ORDER: 'ADD_ORDER',
-  ANY: 'ANY',
+  ADD_ORDER: 'ADD_ORDER'
 };
 
 export default OrdersActionTypes;

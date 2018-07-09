@@ -1,5 +1,6 @@
 import OrdersActionTypes from './OrdersActionTypes';
 import Dispatcher from './../Dispatcher';
+import OrdersStore from './OrdersStore';
 
 const OrdersActions = {
   addOrder(order) {
@@ -7,13 +8,9 @@ const OrdersActions = {
       type: OrdersActionTypes.ADD_ORDER,
       order
     });
-  },
-  any() {
-    Dispatcher.dispatch({
-      type: OrdersActionTypes.ANY
-    });
-  },
+  }
 };
 
 export default OrdersActions;
 window.oa = OrdersActions // TODO VICMAR REMOVE
+window.oas = OrdersStore // TODO VICMAR REMOVE

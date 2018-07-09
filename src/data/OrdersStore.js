@@ -16,12 +16,17 @@ class OrdersStore extends ReduceStore {
   reduce(state, action) {
     switch (action.type) {
       case OrdersActionTypes.ADD_ORDER:
-        console.log("ADD ORDER FUNCTION: ", action.order)
-        const id = Date.now()
-        return state.set(id, new Order({
-          id,
-          text: 'foo'
-        }));
+        const order_id = Date.now()
+        const order_info = action.order
+        order_info.order_id = order_id
+
+        // TODO VICMAR Add models
+        // return state.set(id, new Order({
+        //   id,
+        //   text: 'foo'
+        // }));
+
+        return state.set(order_id, order_info);
 
       default:
         return state;
